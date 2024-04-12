@@ -10,7 +10,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: black;
         }
         .container {
             max-width: 800px;
@@ -18,23 +18,40 @@
             padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .blur-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://source.unsplash.com/random/800x600/?clouds'); /* Замените URL на ваше изображение */
+            background-size: cover;
+            background-position: center;
+            filter: blur(20px);
         }
         h1 {
             text-align: center;
             font-size: 42px;
             margin-bottom: 20px;
-            background: black;
+            background: linear-gradient(to right, #ff6b6b, #8e44ad);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: rainbow 3s linear infinite;
+            position: relative;
+            z-index: 1;
         }
         p {
-            color: #666666;
+            color: #000000;
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 20px;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         .contact-info {
             margin-top: 20px;
@@ -73,12 +90,24 @@
         .social-icons i {
             font-size: 20px;
         }
+        @keyframes rainbow {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="blur-overlay"></div>
         <h1>Хелл - Кодер Minecraft</h1>
-        <p>Опытный кодер Minecraft с глубоким пониманием BukkitAPI и MinecraftAPI. Готов реализовать любые проекты и создавать инновационные решения.</p>
+        <p>Опытный кодер Minecraft с глубоким пониманием BukkitAPI и MinecraftAPI. Готов реализовать любые проекты.</p>
         <div class="contact-info">
             <p>Связаться со мной:</p>
             <p>Discord: @hellwave.cloud (без @)</p>
